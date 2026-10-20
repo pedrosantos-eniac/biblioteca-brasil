@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Livros - Biblioteca Brasil</title>
+</head>
+<body>
+    <header>
+        <h1>Minha Lista de Livros</h1>
+        <a href="index.html">Voltar para Home</a>
+    </header>
+
+    <main>
+        <section class="filtros">
+            <h3>Filtrar por Status:</h3>
+            <button type="button" id="btn-todos">Todos os livros</button>
+            <button type="button" id="btn-nao-iniciados">Não Iniciados</button>
+            <button type="button" id="btn-em-andamento">Em Andamento</button>
+            <button type="button" id="btn-concluidos">Concluídos</button>
+        </section>
+
+            <br>
+
+            <br><label for="titulo">Título do Livro:</label><br>
+            <input type="text" id="titulo" name="titulo" required><br><br>
+        </section>
+
+        <section class="grid-livros">
+            <!-- Exemplo de um card de livro que será gerado pelo JavaScript depois -->
+                <h4>Título</h4>
+                <p><strong>Autor:</strong> Francis A. Schaeffer</p>
+                <p><strong>Gênero:</strong> Religioso</p>
+                <p><strong>Status:</strong> Em Andamento</p>
+                <p><strong>Progresso:</strong> 150 / 1200 páginas</p>
+        </section>
+    </main>
+</body>
+</html>

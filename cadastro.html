@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Livros - Biblioteca Brasil</title>
+</head>
+<body>
+    <header>
+        <h1>Cadastrar Novo Livro</h1>
+        <a href="index.html">Voltar para Início</a>
+    </header>
+
+    <main>
+        <form action="#" method="POST">
+            <br><label for="titulo">Título do Livro:</label><br>
+            <input type="text" id="titulo" name="titulo" required><br><br>
+
+            <label for="autor">Autor:</label><br>
+            <input type="text" id="autor" name="autor" required><br><br>
+
+            <label for="genero">Gênero Literário:</label><br>
+            <input type="text" id="genero" name="genero" required><br><br>
+
+            <label for="paginas">Número de Páginas:</label><br>
+            <input type="number" id="paginas" name="paginas" required><br><br>
+
+            <label for="paginas">Página atual:</label><br>
+            <input type="number" id="pagina_atual" name="pagina_atual" required><br><br>
+
+            <label for="status">Status da Leitura:</label><br>
+            <select id="status" name="status">
+                <option value="nao_iniciado">Não Iniciado</option>
+                <option value="em_andamento">Em Andamento</option>
+                <option value="concluido">Concluído</option>
+            </select><br><br>
+
+            <button type="submit">Salvar Livro</button>
+        </form>
+    </main>
+</body>
+</html>
