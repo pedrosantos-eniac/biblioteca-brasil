@@ -3,40 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Livros - Biblioteca Brasil</title>
+    <meta name="description" content="Cadastre livros na sua Biblioteca Brasil.">
+    <title>Biblioteca Brasil | Cadastrar Livro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Cadastrar Novo Livro</h1>
-        <a href="index.html">Voltar para Início</a>
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <a class="marca" href="index.html" aria-label="Biblioteca Brasil - página inicial">
+                <span class="marca-simbolo" aria-hidden="true">B<span>.</span></span>
+                <span>Biblioteca Brasil</span>
+            </a>
+            <nav class="navegacao" aria-label="Navegação principal">
+                <a href="index.html">Início</a>
+                <a href="biblioteca.html">Minha Biblioteca</a>
+                <a class="ativo" href="cadastro.html" aria-current="page">Cadastrar Livro</a>
+                <a class="link-login" href="admin.html">Login</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <form action="#" method="POST">
-            <br><label for="titulo">Título do Livro:</label><br>
-            <input type="text" id="titulo" name="titulo" required><br><br>
+    <main class="pagina-interna container">
+        <div class="titulo-pagina centralizado">
+            <span class="etiqueta">MINHA ESTANTE</span>
+            <h1>Cadastrar novo livro</h1>
+            <p>Preencha as informações abaixo para adicionar uma leitura à sua biblioteca.</p>
+        </div>
 
-            <label for="autor">Autor:</label><br>
-            <input type="text" id="autor" name="autor" required><br><br>
-
-            <label for="genero">Gênero Literário:</label><br>
-            <input type="text" id="genero" name="genero" required><br><br>
-
-            <label for="paginas">Número de Páginas:</label><br>
-            <input type="number" id="paginas" name="paginas" required><br><br>
-
-            <label for="paginas">Página atual:</label><br>
-            <input type="number" id="pagina_atual" name="pagina_atual" required><br><br>
-
-            <label for="status">Status da Leitura:</label><br>
-            <select id="status" name="status">
-                <option value="nao_iniciado">Não Iniciado</option>
-                <option value="em_andamento">Em Andamento</option>
-                <option value="concluido">Concluído</option>
-            </select><br><br>
-
-            <button type="submit">Salvar Livro</button>
-        </form>
+        <section class="painel formulario-painel" aria-label="Formulário para cadastro de livro">
+            <form action="#" method="POST" class="formulario-livro">
+                <div class="campo">
+                    <label for="titulo">Título do livro</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Ex.: Dom Casmurro" required>
+                </div>
+                <div class="campo">
+                    <label for="autor">Autor</label>
+                    <input type="text" id="autor" name="autor" placeholder="Ex.: Machado de Assis" required>
+                </div>
+                <div class="campo">
+                    <label for="genero">Gênero literário</label>
+                    <input type="text" id="genero" name="genero" placeholder="Ex.: Romance" required>
+                </div>
+                <div class="campo">
+                    <label for="paginas">Total de páginas</label>
+                    <input type="number" id="paginas" name="paginas" min="1" placeholder="Ex.: 256" required>
+                </div>
+                <div class="campo">
+                    <label for="status">Status da leitura</label>
+                    <select id="status" name="status" required>
+                        <option value="nao_iniciado">Não iniciado</option>
+                        <option value="em_andamento">Em andamento</option>
+                        <option value="concluido">Concluído</option>
+                    </select>
+                </div>
+                <div class="campo">
+                    <label for="pagina_atual">Página atual</label>
+                    <input type="number" id="pagina_atual" name="pagina_atual" min="0" placeholder="Ex.: 50" required>
+                </div>
+                <div class="acoes-formulario">
+                    <a href="biblioteca.html" class="botao botao-secundario">Cancelar</a>
+                    <button class="botao botao-primario" type="submit">Salvar livro</button>
+                </div>
+            </form>
+        </section>
     </main>
+
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <span>Biblioteca Brasil</span>
+            <p>Um espaço para cultivar o hábito da leitura.</p>
+            <small>Projeto acadêmico · 2026</small>
+        </div>
+    </footer>
 </body>
 </html>

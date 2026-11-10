@@ -3,22 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Brasil - Home</title>
+    <meta name="description" content="Organize seus livros, acompanhe suas leituras e cultive o hábito de ler com a Biblioteca Brasil.">
+    <title>Biblioteca Brasil | Início</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Biblioteca Brasil</h1>
-        <nav>
-            <a href="index.html">Início</a> |  
-            <a href="biblioteca.html">Minha Biblioteca</a> |
-            <a href="cadastro.html">Cadastrar Livro</a> | 
-            <a href="admin.html">Login</a>
-        </nav>
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <a class="marca" href="index.html" aria-label="Biblioteca Brasil - página inicial">
+                <span class="marca-simbolo" aria-hidden="true">B<span>.</span></span>
+                <span>Biblioteca Brasil</span>
+            </a>
+
+            <nav class="navegacao" aria-label="Navegação principal">
+                <a class="ativo" href="index.html" aria-current="page">Início</a>
+                <a href="biblioteca.html">Minha Biblioteca</a>
+                <a href="cadastro.html">Cadastrar Livro</a>
+                <a class="link-login" href="admin.html">Login</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <h2>Página de Início</h2>
-        <p>Apresentação da página e do negócio Biblioteca Brasil</p>
+        <section class="apresentacao" aria-labelledby="titulo-principal">
+            <div class="container apresentacao-conteudo">
+                <span class="etiqueta">SUA BIBLIOTECA PESSOAL</span>
+                <h1 id="titulo-principal">Sua próxima leitura começa aqui.</h1>
+                <p>Organize seus livros, acompanhe seu progresso e mantenha o hábito da leitura de um jeito simples.</p>
+                <div class="acoes">
+                    <a class="botao botao-primario" href="cadastro.html">Cadastrar um livro <span aria-hidden="true">→</span></a>
+                    <a class="botao botao-secundario" href="biblioteca.html">Ver minha biblioteca</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="funcionalidades container" aria-labelledby="titulo-funcionalidades">
+            <div class="secao-cabecalho">
+                <span class="etiqueta">COMO FUNCIONA</span>
+                <h2 id="titulo-funcionalidades">Tudo para organizar suas leituras</h2>
+                <p>O essencial para acompanhar cada livro, do início à última página.</p>
+            </div>
+
+            <div class="grade-cards">
+                <article class="card">
+                    <span class="card-numero" aria-hidden="true">01</span>
+                    <h3>Cadastre seus livros</h3>
+                    <p>Guarde título, autor, gênero e outras informações dos livros que deseja ler.</p>
+                    <a href="cadastro.html">Cadastrar livro <span aria-hidden="true">→</span></a>
+                </article>
+
+                <article class="card">
+                    <span class="card-numero" aria-hidden="true">02</span>
+                    <h3>Acompanhe sua leitura</h3>
+                    <p>Saiba o que já leu, o que está em andamento e quanto falta para terminar.</p>
+                    <a href="biblioteca.html">Minha biblioteca <span aria-hidden="true">→</span></a>
+                </article>
+
+                <article class="card">
+                    <span class="card-numero" aria-hidden="true">03</span>
+                    <h3>Avalie seus livros</h3>
+                    <p>Registre suas impressões e avaliações para lembrar das suas melhores leituras.</p>
+                    <a href="biblioteca.html">Ver meus livros <span aria-hidden="true">→</span></a>
+                </article>
+            </div>
+        </section>
     </main>
+
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <span>Biblioteca Brasil</span>
+            <p>Um espaço para cultivar o hábito da leitura.</p>
+            <small>Projeto acadêmico · 2026</small>
+        </div>
+    </footer>
 </body>
 </html>

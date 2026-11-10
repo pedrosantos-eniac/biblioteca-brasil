@@ -3,37 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meus Livros - Biblioteca Brasil</title>
+    <meta name="description" content="Consulte e acompanhe seus livros na Biblioteca Brasil.">
+    <title>Biblioteca Brasil | Minha Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Minha Lista de Livros</h1>
-        <a href="index.html">Voltar para Home</a>
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <a class="marca" href="index.html" aria-label="Biblioteca Brasil - página inicial">
+                <span class="marca-simbolo" aria-hidden="true">B<span>.</span></span>
+                <span>Biblioteca Brasil</span>
+            </a>
+            <nav class="navegacao" aria-label="Navegação principal">
+                <a href="index.html">Início</a>
+                <a class="ativo" href="biblioteca.html" aria-current="page">Minha Biblioteca</a>
+                <a href="cadastro.html">Cadastrar Livro</a>
+                <a class="link-login" href="admin.html">Login</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="filtros">
-            <h3>Filtrar por Status:</h3>
-            <button type="button" id="btn-todos">Todos os livros</button>
-            <button type="button" id="btn-nao-iniciados">Não Iniciados</button>
-            <button type="button" id="btn-em-andamento">Em Andamento</button>
-            <button type="button" id="btn-concluidos">Concluídos</button>
+    <main class="pagina-interna container">
+        <div class="titulo-pagina titulo-com-acao">
+            <div>
+                <span class="etiqueta">MINHA ESTANTE</span>
+                <h1>Minha biblioteca</h1>
+                <p>Consulte seus livros e acompanhe o progresso de cada leitura.</p>
+            </div>
+            <a class="botao botao-primario" href="cadastro.html">+ Cadastrar livro</a>
+        </div>
+
+        <section class="painel painel-filtros filtros" aria-label="Buscar e filtrar livros">
+            <div class="campo campo-busca">
+                <label for="titulo">Buscar por título</label>
+                <input type="search" id="titulo" name="titulo" placeholder="Digite o título do livro">
+            </div>
+            <div class="grupo-filtros" aria-label="Filtrar por status">
+                <span class="rotulo-filtros">Status da leitura</span>
+                <div class="botoes-filtros">
+                    <button class="filtro-botao selecionado" type="button" id="btn-todos">Todos os livros</button>
+                    <button class="filtro-botao" type="button" id="btn-nao-iniciados">Não iniciados</button>
+                    <button class="filtro-botao" type="button" id="btn-em-andamento">Em andamento</button>
+                    <button class="filtro-botao" type="button" id="btn-concluidos">Concluídos</button>
+                </div>
+            </div>
         </section>
 
-            <br>
-
-            <br><label for="titulo">Título do Livro:</label><br>
-            <input type="text" id="titulo" name="titulo" required><br><br>
-        </section>
-
-        <section class="grid-livros">
-            <!-- Exemplo de um card de livro que será gerado pelo JavaScript depois -->
-                <h4>Título</h4>
-                <p><strong>Autor:</strong> Francis A. Schaeffer</p>
-                <p><strong>Gênero:</strong> Religioso</p>
-                <p><strong>Status:</strong> Em Andamento</p>
-                <p><strong>Progresso:</strong> 150 / 1200 páginas</p>
+        <section class="secao-livros" aria-labelledby="titulo-livros">
+            <div class="secao-livros-cabecalho">
+                <h2 id="titulo-livros">Seus livros</h2>
+                <span class="texto-apoio">Exemplo de livro cadastrado</span>
+            </div>
+            <div class="grid-livros">
+                <!-- Card de exemplo: futuramente, os dados virão do banco de dados via JavaScript. -->
+                <article class="livro-card">
+                    <span class="status status-andamento">Em andamento</span>
+                    <h3>Título</h3>
+                    <p><strong>Autor:</strong> Francis A. Schaeffer</p>
+                    <p><strong>Gênero:</strong> Religioso</p>
+                    <div class="progresso-texto"><span>Progresso da leitura</span><strong>150 / 1200 páginas</strong></div>
+                    <div class="barra-progresso" role="progressbar" aria-label="Progresso da leitura" aria-valuenow="150" aria-valuemin="0" aria-valuemax="1200">
+                        <span style="width: 12.5%"></span>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
+
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <span>Biblioteca Brasil</span>
+            <p>Um espaço para cultivar o hábito da leitura.</p>
+            <small>Projeto acadêmico · 2026</small>
+        </div>
+    </footer>
 </body>
 </html>
