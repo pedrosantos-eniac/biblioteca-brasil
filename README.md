@@ -20,7 +20,7 @@ Projeto desenvolvido com HTML, CSS, JavaScript, Node.js e SQLite.
 
 5. Abra o navegador e acesse:
 
-   http://localhost:3001
+   http://localhost:3000
 
 ## Banco de dados
 
