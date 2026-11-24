@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acesse a área administrativa da Biblioteca Brasil.">
+    <title>Biblioteca Brasil | Administração</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <a class="marca" href="index.html" aria-label="Biblioteca Brasil - página inicial">
+                <span class="marca-simbolo" aria-hidden="true">B<span>.</span></span>
+                <span>Biblioteca Brasil</span>
+            </a>
+            <nav class="navegacao" aria-label="Navegação principal">
+                <a href="index.html">Início</a>
+                <a href="biblioteca.html">Minha Biblioteca</a>
+                <a href="cadastro.html">Adicionar Livro</a>
+                <a class="link-login ativo" href="admin.html" aria-current="page">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pagina-interna container">
+      <h1>Gerenciar catálogo</h1>
+      <form id="form-livro" class="painel formulario-livro" style="padding:24px">
+        <label class="campo">Título<input id="novo-titulo" required></label>
+        <label class="campo">Autor<input id="novo-autor" required></label>
+        <label class="campo">Gênero<input id="novo-genero" required></label>
+        <label class="campo">Total de páginas<input id="novas-paginas" type="number" min="1" required></label>
+        <button class="botao botao-primario" type="submit">Cadastrar livro</button>
+        <p id="aviso"></p>
+      </form>
+      <div class="grid-livros" id="lista-catalogo" style="margin-top:25px"></div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <span>Biblioteca Brasil</span>
+            <p>Um espaço para cultivar o hábito da leitura.</p>
+            <small>Projeto acadêmico · 2026</small>
+        </div>
+    </footer>
+<script src="app.js" defer></script>
+</body>
+</html>

@@ -176,3 +176,77 @@ button { cursor: pointer; }
     .acoes-formulario { flex-direction: column-reverse; }
     .acoes-formulario .botao { width: 100%; }
 }
+
+/* ============================================================
+   Biblioteca Brasil — componentes para o novo fluxo de acesso
+   Catálogo: público | Biblioteca pessoal: usuário autenticado
+   Cadastro/edição/exclusão de títulos: somente administrador.
+   ATENÇÃO: estilos não substituem verificação de autorização no servidor.
+   ============================================================ */
+
+/* Navegação e identificação da conta */
+.navegacao .link-conta { display: inline-flex; align-items: center; gap: 8px; }
+.usuario-identificacao { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; background: var(--verde-claro); color: var(--verde-escuro); font-size: 13px; font-weight: 600; }
+.usuario-avatar { display: grid; place-items: center; width: 27px; height: 27px; background: var(--verde); color: #fff; border-radius: 50%; font-size: 12px; }
+
+/* Diferencia as áreas sem mudar a paleta visual */
+.cabecalho-secao { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+.cabecalho-secao h2 { font-size: 23px; letter-spacing: -.5px; margin: 0 0 5px; }
+.cabecalho-secao p { margin: 0; color: var(--texto-suave); font-size: 14px; }
+.etiqueta-perfil { display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border: 1px solid #d6e5d9; background: var(--verde-claro); border-radius: 20px; font-size: 11px; font-weight: 700; color: var(--verde); }
+.etiqueta-perfil.admin { background: #f0f2f0; border-color: var(--borda); color: var(--texto); }
+
+/* Catálogo de títulos: os livros são selecionados, não criados pelo leitor */
+.card-catalogo { display: flex; flex-direction: column; gap: 12px; }
+.card-catalogo .livro-card-rodape { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 17px; border-top: 1px solid var(--borda); }
+.card-catalogo .livro-card-rodape .botao { padding: 9px 13px; min-height: 38px; }
+.card-catalogo .livro-card-descricao { color: var(--texto-suave); font-size: 13px; }
+
+/* Estante individual: ações permitidas ao leitor */
+.acoes-leitura { display: flex; gap: 9px; flex-wrap: wrap; padding-top: 15px; margin-top: 18px; border-top: 1px solid var(--borda); }
+.acoes-leitura .botao { min-height: 38px; padding: 8px 12px; font-size: 12px; }
+.status-nao-iniciado { background: #eef2ee; color: #596b60; }
+.status-concluido { background: #e1f2e5; color: #246540; }
+.avaliacao-livro { font-size: 13px; font-weight: 600; color: var(--verde); }
+
+/* Área do administrador: ferramentas de manutenção do catálogo */
+.painel-admin { padding: 26px; }
+.acoes-admin { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+.botao-perigo { border: 1px solid #edcfca; color: #a33c35; background: #fff; }
+.botao-perigo:hover { background: #fff4f2; border-color: #dca49c; }
+.botao-discreto { color: var(--verde); border: 1px solid var(--borda); background: #fff; }
+.botao-discreto:hover { border-color: var(--verde); background: var(--verde-claro); }
+
+/* Login e cadastro de conta de usuário, compartilhando os campos existentes */
+.autenticacao-painel { width: min(100%, 460px); margin: 0 auto; padding: 35px; }
+.autenticacao-painel h1 { font-size: 30px; margin: 0 0 12px; letter-spacing: -.8px; }
+.autenticacao-painel > p { font-size: 14px; color: var(--texto-suave); margin-bottom: 24px; }
+.formulario-autenticacao { display: grid; gap: 17px; }
+.formulario-autenticacao .botao { width: 100%; border: none; margin-top: 6px; }
+.texto-alternativa { text-align: center; margin: 18px 0 0; font-size: 13px; color: var(--texto-suave); }
+.texto-alternativa a { font-weight: 700; color: var(--verde); }
+.texto-alternativa a:hover { text-decoration: underline; }
+
+/* Orientações de permissão, feedback e estados vazios */
+.aviso { padding: 14px 17px; background: var(--verde-claro); border: 1px solid #d4e2d7; border-radius: 10px; color: var(--verde-escuro); font-size: 13px; }
+.aviso-erro { background: #fff4f2; border-color: #edcfca; color: #923b34; }
+.estado-vazio { padding: 50px 25px; border: 1px dashed #ccd9cf; border-radius: var(--raio); background: var(--branco); text-align: center; }
+.estado-vazio h3 { margin-bottom: 8px; font-size: 19px; }
+.estado-vazio p { color: var(--texto-suave); font-size: 14px; max-width: 430px; margin: 0 auto 20px; }
+.texto-ajuda { font-size: 12px; color: var(--texto-suave); }
+[hidden] { display: none !important; }
+
+@media (max-width: 600px) {
+    .cabecalho-secao { flex-direction: column; align-items: flex-start; }
+    .autenticacao-painel, .painel-admin { padding: 23px; }
+    .card-catalogo .livro-card-rodape { align-items: stretch; flex-direction: column; }
+    .card-catalogo .livro-card-rodape .botao { width: 100%; }
+    .acoes-leitura .botao { flex: 1; }
+}
+
+/* Biblioteca Brasil: edicao de leituras e painel administrativo */
+.cartao-livro {background:#fff;border:1px solid #dce4df;border-radius:14px;padding:20px;display:grid;gap:10px;align-content:start;}
+.cartao-livro h3{margin:0}.cartao-livro p{margin:0;color:#62756a}.edicao-leitura{display:grid;gap:10px}.edicao-leitura input,.edicao-leitura select{width:100%;min-height:40px;padding:8px;border:1px solid #d2ddd4;border-radius:8px;background:white}.edicao-leitura label{display:grid;gap:6px}.cartao-livro button{cursor:pointer}.resultados-busca .resultado-livro {display:block;width:100%;text-align:left;padding:13px;margin:5px 0;border:1px solid #dbe3dd;background:white;border-radius:9px;cursor:pointer}.login-painel .formulario-login .campo {display:grid;text-align:left;gap:6px}.login-painel .formulario-login input{padding:12px}.formulario-livro .campo{display:grid;gap:5px;}
+
+/* Esconder campos e links definidos pelo JavaScript */
+[hidden] { display: none !important; }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encontre um título do catálogo Biblioteca Brasil.">
+  <title>Biblioteca Brasil | Adicionar livro</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a class="marca" href="index.html" aria-label="Biblioteca Brasil - página inicial">
+        <span class="marca-simbolo" aria-hidden="true">B<span>.</span></span><span>Biblioteca Brasil</span>
+      </a>
+      <nav class="navegacao" aria-label="Navegação principal">
+        <a href="index.html">Início</a>
+        <a href="biblioteca.html">Minha Biblioteca</a>
+        <a class="ativo" href="cadastro.html" aria-current="page">Adicionar livro</a>
+        <a class="link-login" href="admin.html">Login</a>
+      </nav>
+    </div>
+  </header>
+  <main class="pagina-interna container">
+    <div class="titulo-pagina centralizado">
+      <span class="etiqueta">MINHA ESTANTE</span>
+      <h1>Encontre sua próxima leitura</h1>
+      <p>Pesquise um livro do catálogo e selecione o título desejado.</p>
+    </div>
+    <section class="painel formulario-painel busca-livro-painel" aria-label="Pesquisar catálogo de livros">
+      <div class="campo">
+        <label for="busca-livro">Pesquisar livro</label>
+        <input type="search" id="busca-livro" placeholder="Digite o título ou o autor" autocomplete="off" aria-controls="resultados-busca" aria-describedby="instrucoes-busca">
+        <p id="instrucoes-busca" class="texto-ajuda">As sugestões aparecem enquanto você digita.</p>
+      </div>
+      <div id="resultados-busca" class="resultados-busca" aria-label="Resultados encontrados" aria-live="polite"></div>
+      <section id="livro-selecionado" class="livro-selecionado" hidden aria-live="polite">
+        <span class="etiqueta">LIVRO SELECIONADO</span>
+        <h2 id="livro-titulo"></h2>
+        <p id="livro-detalhes"></p>
+        <button type="button" id="trocar-livro" class="botao botao-secundario">Escolher outro livro</button>
+      </section>
+      <form id="formulario-leitura" class="formulario-leitura" hidden>
+        <div class="campo">
+          <label for="status">Status de leitura</label>
+          <select id="status" name="status">
+            <option value="nao_iniciado">Não iniciado</option>
+            <option value="em_andamento">Em andamento</option>
+            <option value="concluido">Concluído</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="pagina_atual">Página atual</label>
+          <input id="pagina_atual" name="pagina_atual" type="number" min="0" value="0" required>
+        </div>
+        <p class="texto-ajuda">O progresso será salvo na sua conta. É necessário fazer login.</p>
+        <div class="acoes-formulario">
+          <a href="biblioteca.html" class="botao botao-secundario">Voltar à biblioteca</a>
+          <button type="submit" class="botao botao-primario">Adicionar à minha biblioteca</button>
+        </div>
+      </form>
+      <p id="mensagem-cadastro" class="mensagem-formulario" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer class="rodape"><div class="container rodape-conteudo"><span>Biblioteca Brasil</span><p>Um espaço para cultivar o hábito da leitura.</p><small>Projeto acadêmico · 2026</small></div></footer>
+<script src="app.js" defer></script>
+</body>
+</html>

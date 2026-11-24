@@ -17,7 +17,7 @@
             <nav class="navegacao" aria-label="Navegação principal">
                 <a href="index.html">Início</a>
                 <a href="biblioteca.html">Minha Biblioteca</a>
-                <a href="cadastro.html">Cadastrar Livro</a>
+                <a href="cadastro.html">Adicionar Livro</a>
                 <a class="link-login ativo" href="admin.html" aria-current="page">Login</a>
             </nav>
         </div>
@@ -25,22 +25,19 @@
 
     <main class="pagina-interna pagina-login container">
         <section class="painel login-painel" aria-labelledby="titulo-login">
-            <div class="login-icone" aria-hidden="true">B<span>.</span></div>
-            <span class="etiqueta">ÁREA ADMINISTRATIVA</span>
-            <h1 id="titulo-login">Bem-vindo!</h1>
-            <p>Entre com suas credenciais para acessar a administração da biblioteca.</p>
-            <form action="#" method="POST" class="formulario-login">
-                <div class="campo">
-                    <label for="usuario">Usuário</label>
-                    <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" autocomplete="username" required>
-                </div>
-                <div class="campo">
-                    <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
-                </div>
-                <button type="submit" class="botao botao-primario botao-largura-total">Entrar</button>
+            <h1 id="titulo-login">Acesse sua conta</h1>
+            <p>Entre ou crie uma conta gratuita.</p>
+            <form id="form-login" class="formulario-login">
+                <label class="campo">Login
+                    <input id="login" type="text" placeholder="Digite seu login" required>
+                </label>
+                <label class="campo">Senha
+                    <input id="senha" type="password" placeholder="Digite sua senha" required>
+                </label>
+                <button class="botao botao-primario" type="submit">Entrar</button>
+                <button class="botao botao-secundario" type="button" id="registrar">Criar conta comum</button>
             </form>
-            <a class="voltar-login" href="index.html">← Voltar para a página inicial</a>
+            <p id="aviso" role="status"></p>
         </section>
     </main>
 
@@ -51,5 +48,6 @@
             <small>Projeto acadêmico · 2026</small>
         </div>
     </footer>
+<script src="app.js" defer></script>
 </body>
 </html>
