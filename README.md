@@ -28,4 +28,4 @@ O banco de dados fica na pasta `dados`, no arquivo `biblioteca.db`.
 
 Ele já deve estar criado com as tabelas `usuarios`, `livros` e `leituras`.
 
-O arquivo `schema.sql` contém o script com os comandos utilizados para criar as tabelas, caso seja necessário criar um banco novo.
+O arquivo `schema.sql` contém o script com os comandos utilizados para criar as tabelas.
