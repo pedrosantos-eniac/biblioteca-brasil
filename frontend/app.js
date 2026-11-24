@@ -98,6 +98,7 @@ async function adicionarPage() {
     encontrados.forEach(livro => {
       const botao = criar('button', `${livro.titulo} — ${livro.autor}`, 'resultado-livro');
       botao.type = 'button';
+      botao.disabled = !usuario;
       botao.onclick = () => {
         escolhido = livro;
         busca.value = livro.titulo;
